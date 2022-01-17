@@ -21,10 +21,14 @@ Route::get('/', function () {
 
 Route::prefix('/admin')->group(function(){
     // Admin Login
-    Route::get('/login',[App\Http\Controllers\Admin\AdminLoginController::class,'adminLogin'])->name('adminLogin');
+    Route::get('/login', [App\Http\Controllers\Admin\AdminLoginController::class,'adminLogin'])->name('adminLogin');
+    Route::post('/login', [App\Http\Controllers\Admin\AdminLoginController::class, 'loginAdmin'])->name('loginAdmin');
 
     Route::group(['middleware' => 'admin'], function(){
         // Admin Dashboard
-        Route::get('/dashboard',[App\Http\Controllers\Admin\AdminLoginController::class, 'adminDashboard'])->name('adminDashboard');
+        Route::get('/dashboard', [App\Http\Controllers\Admin\AdminLoginController::class, 'adminDashboard'])->name('adminDashboard');
     });
+
+    // Admin Logout
+    Route::get('/logout', [App\Http\Controllers\Admin\AdminLoginController::class, 'adminLogout'])->name('adminLogout');
 });

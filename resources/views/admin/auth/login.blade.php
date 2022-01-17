@@ -17,7 +17,7 @@
   <!-- loader-->
 	<link href="{{asset('public/admin/assets/css/pace.min.css')}}" rel="stylesheet" />
 
-  <title>Admin Login</title>
+    <title>Admin Login</title>
 </head>
 
 <body>
@@ -36,7 +36,8 @@
                 </div>
                 <div class="col-lg-6">
                   <div class="card-body p-4 p-sm-5">
-                    <form class="form-body">
+                    <form method="POST" action="{{ route('loginAdmin') }}" class="form-body">
+                        @csrf
                       <div class="login-separater text-center mb-4"> <span>SIGN IN WITH EMAIL</span>
                         <hr>
                       </div>
@@ -45,14 +46,14 @@
                             <label for="inputEmailAddress" class="form-label">Email Address</label>
                             <div class="ms-auto position-relative">
                               <div class="position-absolute top-50 translate-middle-y search-icon px-3"><i class="bi bi-envelope-fill"></i></div>
-                              <input type="email" class="form-control radius-30 ps-5" id="inputEmailAddress" placeholder="Email Address">
+                              <input type="email" class="form-control radius-30 ps-5" id="inputEmailAddress" placeholder="Email Address" name="email">
                             </div>
                           </div>
                           <div class="col-12">
                             <label for="inputChoosePassword" class="form-label">Enter Password</label>
                             <div class="ms-auto position-relative">
                               <div class="position-absolute top-50 translate-middle-y search-icon px-3"><i class="bi bi-lock-fill"></i></div>
-                              <input type="password" class="form-control radius-30 ps-5" id="inputChoosePassword" placeholder="Enter Password">
+                              <input type="password" class="form-control radius-30 ps-5" id="inputChoosePassword" placeholder="Enter Password" name="password">
                             </div>
                           </div>
                           <div class="col-6">
