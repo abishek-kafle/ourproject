@@ -24,7 +24,7 @@
 
   <!--start wrapper-->
   <div class="wrapper">
-    
+
        <!--start content-->
        <main class="authentication-content">
         <div class="container-fluid">
@@ -80,7 +80,7 @@
           </div>
         </div>
        </main>
-        
+
        <!--end page main-->
 
   </div>
@@ -93,5 +93,4 @@
 
 
 </body>
-
 </html>
