@@ -42,6 +42,7 @@
                         <hr>
                       </div>
                         <div class="row g-3">
+                            @include('admin.inc._messages')
                           <div class="col-12">
                             <label for="inputEmailAddress" class="form-label">Email Address</label>
                             <div class="ms-auto position-relative">
