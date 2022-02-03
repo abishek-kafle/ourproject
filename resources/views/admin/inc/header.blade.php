@@ -28,7 +28,7 @@
                         </li>
                         <li><hr class="dropdown-divider"></li>
                         <li>
-                            <a class="dropdown-item" href="pages-user-profile.html">
+                            <a class="dropdown-item" href="{{route('adminProfile')}}">
                                 <div class="d-flex align-items-center">
                                     <div class=""><i class="bi bi-person-fill"></i></div>
                                     <div class="ms-3"><span>Profile</span></div>
@@ -44,7 +44,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="index2.html">
+                            <a class="dropdown-item" href="{{route('adminDashboard')}}">
                                 <div class="d-flex align-items-center">
                                     <div class=""><i class="bi bi-speedometer"></i></div>
                                     <div class="ms-3"><span>Dashboard</span></div>

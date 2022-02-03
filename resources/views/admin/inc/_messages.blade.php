@@ -7,9 +7,17 @@
     </div>
 @endif
 @if (Session::has('info_message'))
-    <div class="alert border-8 bg-light-danger alert-dismissible fade show">
+    <div class="alert border-8 bg-light-info alert-dismissible fade show">
         <div class="text-info">
             {{Session::get('info_message')}}
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+    </div>
+@endif
+@if (Session::has('success_message'))
+    <div class="alert border-8 bg-light-success alert-dismissible fade show">
+        <div class="text-success">
+            {{Session::get('success_message')}}
         </div>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
     </div>
