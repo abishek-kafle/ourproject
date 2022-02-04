@@ -1,3 +1,6 @@
+@php
+    $current_user = \Illuminate\Support\Facades\Auth::guard('admin')->user();
+@endphp
 <!--start top header-->
 <header class="top-header">
     <nav class="navbar navbar-expand gap-3">
@@ -11,17 +14,17 @@
                 <li class="nav-item dropdown dropdown-user-setting">
                     <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" data-bs-toggle="dropdown">
                         <div class="user-setting d-flex align-items-center">
-                            <img src="{{ asset('public/admin/assets/images/avatars/avatar-1.png') }}" class="user-img" alt="">
+                            <img src="{{ asset('public/uploads/admin/'.$current_user->image) }}" class="user-img" alt="">
                         </div>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li>
                             <a class="dropdown-item" href="#">
                                 <div class="d-flex align-items-center">
-                                    <img src="{{ asset('public/admin/assets/images/avatars/avatar-1.png') }}" alt="" class="rounded-circle" width="54" height="54">
+                                    <img src="{{ asset('public/uploads/admin/'.$current_user->image) }}" alt="" class="rounded-circle" width="54" height="54">
                                     <div class="ms-3">
-                                        <h6 class="mb-0 dropdown-user-name">Jhon Deo</h6>
-                                        <small class="mb-0 dropdown-user-designation text-secondary">HR Manager</small>
+                                        <h6 class="mb-0 dropdown-user-name">{{$current_user->name}}</h6>
+                                        <small class="mb-0 dropdown-user-designation text-secondary">Administrator</small>
                                     </div>
                                 </div>
                             </a>

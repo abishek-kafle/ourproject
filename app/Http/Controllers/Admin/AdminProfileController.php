@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Session;
+use Intervention\Image\Facades\Image;
 
 class AdminProfileController extends Controller
 {
@@ -37,8 +39,21 @@ class AdminProfileController extends Controller
         $admin->email = $data['email'];
         $admin->address = $data['address'];
         $admin->phone = $data['phone'];
+
+        $random = Str::random(10);
+        if($request->hasFile('image')){
+            $img_temp = $request->file('image');
+            if($img_temp->isValid()){
+                $extension = $img_temp->getClientOriginalExtension();
+                $filename = $random.".".$extension;
+                $image_path = 'public/uploads/admin/'.$filename;
+                Image::make($img_temp)->save($image_path);
+                $admin->image = $filename;
+            }
+        }
+
         $admin->save();
         Session::flash('success_message', 'Profile updated successfully !');
-        return redirect('/admin/profile');
+        return redirect()->back();
     }
 }
