@@ -14,14 +14,22 @@
                 <li class="nav-item dropdown dropdown-user-setting">
                     <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" data-bs-toggle="dropdown">
                         <div class="user-setting d-flex align-items-center">
+                            @if(!empty($current_user->image))
                             <img src="{{ asset('public/uploads/admin/'.$current_user->image) }}" class="user-img" alt="">
+                            @else
+                            <img src="{{ asset('public/uploads/default/profile.png') }}" alt="" class="rounded-circle" width="54" height="54">
+                            @endif
                         </div>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li>
                             <a class="dropdown-item" href="#">
                                 <div class="d-flex align-items-center">
+                                    @if (!empty($current_user->image))
                                     <img src="{{ asset('public/uploads/admin/'.$current_user->image) }}" alt="" class="rounded-circle" width="54" height="54">
+                                    @else
+                                    <img src="{{ asset('public/uploads/default/profile.png') }}" alt="" class="rounded-circle" width="54" height="54">
+                                    @endif
                                     <div class="ms-3">
                                         <h6 class="mb-0 dropdown-user-name">{{$current_user->name}}</h6>
                                         <small class="mb-0 dropdown-user-designation text-secondary">Administrator</small>

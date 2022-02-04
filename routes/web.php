@@ -31,6 +31,12 @@ Route::prefix('/admin')->group(function(){
         Route::get('/profile', [App\Http\Controllers\Admin\AdminProfileController::class, 'adminProfile'])->name('adminProfile');
         // Admin Profile update
         Route::post('/profile/update/{id}', [\App\Http\Controllers\Admin\AdminProfileController::class, 'adminProfileUpdate'])->name('adminProfileUpdate');
+        // Delete Image
+        Route::get('/delete-image/{id}', [\App\Http\Controllers\Admin\AdminProfileController::class, 'deleteImage'])->name('deleteImage');
+        // Change Password
+        Route::get('/change-password', [\App\Http\Controllers\Admin\AdminProfileController::class, 'changePassword'])->name('changePassword');
+        // Check Current Password
+        Route::post('/check-password', [\App\Http\Controllers\Admin\AdminProfileController::class, 'chkUserPassword'])->name('chkUserPassword');
     });
 
     // Admin Logout

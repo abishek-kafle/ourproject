@@ -17,4 +17,7 @@
 <script>
   new PerfectScrollbar(".best-product")
 </script>
+<!-- Sweetalert -->
+<script src="{{asset('public/admin/assets/js/jquery.sweet-alert.custom.js')}}"></script>
+<script src="{{asset('public/admin/assets/js/sweetalert.min.js')}}"></script>
 @yield('js')
