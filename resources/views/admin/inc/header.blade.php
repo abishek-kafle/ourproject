@@ -39,22 +39,6 @@
                         </li>
                         <li><hr class="dropdown-divider"></li>
                         <li>
-                            <a class="dropdown-item" href="{{route('adminProfile')}}">
-                                <div class="d-flex align-items-center">
-                                    <div class=""><i class="bi bi-person-fill"></i></div>
-                                    <div class="ms-3"><span>Profile</span></div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">
-                                <div class="d-flex align-items-center">
-                                    <div class=""><i class="bi bi-gear-fill"></i></div>
-                                    <div class="ms-3"><span>Setting</span></div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
                             <a class="dropdown-item" href="{{route('adminDashboard')}}">
                                 <div class="d-flex align-items-center">
                                     <div class=""><i class="bi bi-speedometer"></i></div>
@@ -63,18 +47,18 @@
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="{{route('adminProfile')}}">
                                 <div class="d-flex align-items-center">
-                                    <div class=""><i class="bi bi-piggy-bank-fill"></i></div>
-                                    <div class="ms-3"><span>Earnings</span></div>
+                                    <div class=""><i class="bi bi-person-fill"></i></div>
+                                    <div class="ms-3"><span>Profile</span></div>
                                 </div>
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="{{route('changePassword')}}">
                                 <div class="d-flex align-items-center">
-                                    <div class=""><i class="bi bi-cloud-arrow-down-fill"></i></div>
-                                    <div class="ms-3"><span>Downloads</span></div>
+                                    <div class=""><i class="bi bi-gear-fill"></i></div>
+                                    <div class="ms-3"><span>Change Password</span></div>
                                 </div>
                             </a>
                         </li>

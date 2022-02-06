@@ -92,7 +92,7 @@
                     type: "warning",
                     showCancelButton: true,
                     confirmButtonClass: "btn-danger",
-                    confirmButtonText: "Yes, Delete it!"
+                    confirmButtonText: "Yes, Delete it!",
                 },
                 function () {
                     window.location.href =  SITEURL + "/admin/" + deleteFunction + "/" + id;
