@@ -71,7 +71,8 @@ class AdminProfileController extends Controller
         return redirect()->back();
     }
     public function changePassword(){
-        return view ('admin.profile.changePassword');
+        $admin = Auth::guard('admin')->user();
+        return view ('admin.profile.changePassword', compact('admin'));
     }
 
     public function chkUserPassword(Request $request){
@@ -83,6 +84,26 @@ class AdminProfileController extends Controller
             return "true"; die;
         } else {
             return "false"; die;
+        }
+    }
+
+    public function updatePassword(Request $request, $id){
+        $validateData = $request->validate([
+            'current_password' => 'required|max:255',
+            'password' => 'min:6',
+            'confirm_password' => 'required_with:password|same:password|min:6'
+        ]);
+        $data = $request->all();
+        $admin = Admin::where('email', Auth::guard('admin')->user()->email)->first();
+        $current_admin_password = $admin->password;
+        if(Hash::check($data['current_password'], $current_admin_password)){
+            $admin->password = bcrypt($data['password']);
+            $admin->save();
+            Session::flash('success_message', 'Admin Password has been Updated Successfully');
+            return redirect()->back();
+        }else{
+            Session::flash('error_message','Your password doesnot match with our database');
+            return redirect()->back();
         }
     }
 }

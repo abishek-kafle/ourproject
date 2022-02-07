@@ -37,6 +37,8 @@ Route::prefix('/admin')->group(function(){
         Route::get('/change-password', [\App\Http\Controllers\Admin\AdminProfileController::class, 'changePassword'])->name('changePassword');
         // Check Current Password
         Route::post('/check-password', [\App\Http\Controllers\Admin\AdminProfileController::class, 'chkUserPassword'])->name('chkUserPassword');
+        //Update Admin password
+        Route::post('/profile/update_password/{id}', [\App\Http\Controllers\Admin\AdminProfileController::class, 'updatePassword'])->name('updatePassword');
     });
 
     // Admin Logout

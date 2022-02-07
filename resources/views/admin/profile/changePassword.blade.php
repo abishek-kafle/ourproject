@@ -16,7 +16,7 @@
                             @include('admin.inc._messages')
 
                             <div class="card-body">
-                                <form class="g-3" method="post" action="" enctype="multipart/form-data">
+                                <form class="g-3" method="POST" action="{{route('updatePassword', $admin->id)}}" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row">
                                         <div class="col-6">
