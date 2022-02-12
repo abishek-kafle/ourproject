@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\Front\IndexController::class, 'index']);
 
 Route::prefix('/admin')->group(function(){
     // Admin Login
