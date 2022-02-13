@@ -13,22 +13,31 @@
     <!--navigation-->
     <ul class="metismenu" id="menu">
         <li>
-            <a href="javascript:;" class="has-arrow">
+            <a href="{{route('adminDashboard')}}">
                 <div class="parent-icon"><i class="bi bi-house-fill"></i>
                 </div>
                 <div class="menu-title">
                     Dashboard
                 </div>
             </a>
+        </li>
+        <li>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon"><i class="lni lni-cog"></i>
+                </div>
+                <div class="menu-title">
+                    Settings
+                </div>
+            </a>
             <ul>
                 <li>
-                    <a href="index.html"><i class="bi bi-circle"></i>
-                        Blue Dashboard
+                    <a href="{{route('theme')}}"><i class="bi bi-circle"></i>
+                        Theme Settings
                     </a>
                 </li>
                 <li>
                     <a href="index2.html"><i class="bi bi-circle"></i>
-                        Color Dashboard
+                        Site Settings
                     </a>
                 </li>
             </ul>

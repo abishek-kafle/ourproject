@@ -37,6 +37,9 @@ Route::prefix('/admin')->group(function(){
         Route::post('/check-password', [\App\Http\Controllers\Admin\AdminProfileController::class, 'chkUserPassword'])->name('chkUserPassword');
         //Update Admin password
         Route::post('/profile/update_password/{id}', [\App\Http\Controllers\Admin\AdminProfileController::class, 'updatePassword'])->name('updatePassword');
+        // Theme Settings
+        Route::get('/theme', [\App\Http\Controllers\Admin\ThemeController::class, 'theme'])->name('theme');
+        Route::post('/theme/{id}', [\App\Http\Controllers\Admin\ThemeController::class, 'themeUpdate'])->name('themeUpdate');
     });
 
     // Admin Logout
