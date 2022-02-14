@@ -11,21 +11,31 @@
                     </div>
                     <p>Grursus mal suada faci Lorem to the ipsum dolarorit more ame tion more consectetu.</p>
                     <div class="social-link">
-                        <a href="#" class="bg-tertiary" target="_blank">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="bg-success" target="_blank">
-                            <i class="fab fa-tumblr"></i>
-                        </a>
-                        <a href="#" class="bg-danger" target="_blank">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="#" class="bg-info" target="_blank">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="bg-pink" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                        </a>
+                        @if (!empty($social->facebook))
+                            <a href="{{$social->facebook}}" class="bg-tertiary" target="_blank">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        @endif
+                        @if (!empty($social->twitter))
+                            <a href="{{$social->twitter}}" class="bg-success" target="_blank">
+                                <i class="fab fa-tumblr"></i>
+                            </a>
+                        @endif
+                        @if (!empty($social->youtube))
+                            <a href="{{$social->youtube}}" class="bg-danger" target="_blank">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        @endif
+                        @if (!empty($social->linkedin))
+                            <a href="{{$social->linkedin}}" class="bg-info" target="_blank">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        @endif
+                        @if (!empty($social->instagram))
+                            <a href="{{$social->instagram}}" class="bg-pink" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -78,22 +88,22 @@
                     <h5>Contact info</h5>
                     <div class="contact-info">
                         <i class="envy envy-pin"></i>
-                        <p>113 Solit, White House, New Jersey, USA</p>
+                        <p>{{$setting->address}}</p>
                     </div>
                     <div class="contact-info">
                         <i class="envy envy-call"></i>
                         <p>
-                            <a href="tel:+001-548-159-2491">+001-548-159-2491</a>
+                            <a href="tel:{{$setting->phone}}">{{$setting->phone}}</a>
                         </p>
                         <br>
                         <p>
-                            <a href="tel:+001-548-159-2492">+001-548-159-2492</a>
+                            <a href="{{$setting->alt_phone}}">{{$setting->alt_phone}}</a>
                         </p>
                     </div>
                     <div class="contact-info">
                         <i class="envy envy-plane"></i>
                         <p>
-                            <a href="mailTo:hello@solit.com">hello@solit.com</a>
+                            <a href="mailTo:{{$setting->email}}">{{$setting->email}}</a>
                         </p>
                     </div>
                 </div>

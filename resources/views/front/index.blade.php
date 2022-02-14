@@ -1,5 +1,9 @@
 @extends('front.includes.front_design')
 
+@section('title')
+    {{$theme->website_name}} - {{$theme->website_tagline}}
+@endsection
+
 @section('content')
      <!-- start home banner area -->
      <div id="home" class="home-banner-area banner-type-one">

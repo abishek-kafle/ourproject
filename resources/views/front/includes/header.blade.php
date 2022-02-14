@@ -8,47 +8,57 @@
                 <ul class="info-list">
                     <li>
                         <i class="envy envy-email"></i>
-                        <a href="mailTo:hello@solit.com">hello@solit.com</a>
+                        <a href="mailTo:{{$setting->email}}">{{$setting->email}}</a>
                     </li>
-                    <li><i class="envy envy-wall-clock"></i>Mon - Sat: 8.00 am - 7.00 pm</li>
+                    <li><i class="envy envy-wall-clock"></i>{{$setting->office_hour}}</li>
                 </ul>
             </div>
             <!-- top right -->
             <div class="top-right">
                 <div class="social-link">
-                    <a href="#" target="_blank">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" target="_blank">
-                        <i class="fab fa-tumblr"></i>
-                    </a>
-                    <a href="#" target="_blank">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                    <a href="#" target="_blank">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="#" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
+                    @if (!empty($social->facebook))
+                        <a href="{{$social->facebook}}" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    @endif
+                    @if (!empty($social->twitter))
+                        <a href="{{$social->twitter}}" target="_blank">
+                            <i class="fab fa-tumblr"></i>
+                        </a>
+                    @endif
+                    @if (!empty($social->youtube))
+                        <a href="{{$social->youtube}}" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    @endif
+                    @if (!empty($social->linkedin))
+                        <a href="{{$social->linkedin}}" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    @endif
+                    @if (!empty($social->instagram))
+                        <a href="{{$social->instagram}}" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    @endif
                 </div>
             </div>
         </div>
     </div>
     <!-- menu for mobile device -->
     <div class="mobile-nav">
-        <a href="index.html" class="logo">
-            <img src="{{asset('public/front/assets/img/logos/logo_light.png')}}" alt="logo_light" />
-            <img src="{{asset('public/front/assets/img/logos/logo_dark.png')}}" alt="logo-dark" />
+        <a href="{{route('index')}}" class="logo">
+            <img src="{{asset('public/uploads/'.$theme->logo)}}" alt="{{$theme->website_name}}"/>
+            <img src="{{asset('public/uploads/'.$theme->logo)}}" alt="{{$theme->website_name}}"/>
         </a>
     </div>
     <!-- menu for desktop device-->
     <div class="main-nav">
         <nav class="navbar navbar-expand-md navbar-light">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <img src="{{asset('public/front/assets/img/logos/logo_light.png')}}" alt="logo_light" />
-                    <img src="{{asset('public/front/assets/img/logos/logo_dark.png')}}" alt="logo-dark" />
+                <a class="navbar-brand" href="{{route('index')}}">
+                    <img src="{{asset('public/uploads/'.$theme->logo)}}" alt="{{$theme->website_name}}"/>
+                    <img src="{{asset('public/uploads/'.$theme->logo)}}" alt="{{$theme->website_name}}"/>
                 </a>
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto">

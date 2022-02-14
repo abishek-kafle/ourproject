@@ -36,8 +36,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="index2.html"><i class="bi bi-circle"></i>
+                    <a href="{{route('setting')}}"><i class="bi bi-circle"></i>
                         Site Settings
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('social')}}"><i class="bi bi-circle"></i>
+                        Social Settings
                     </a>
                 </li>
             </ul>

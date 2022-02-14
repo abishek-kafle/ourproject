@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\Front\IndexController::class, 'index']);
+Route::get('/', [\App\Http\Controllers\Front\IndexController::class, 'index'])->name('index');
 
 Route::prefix('/admin')->group(function(){
     // Admin Login
@@ -40,6 +40,13 @@ Route::prefix('/admin')->group(function(){
         // Theme Settings
         Route::get('/theme', [\App\Http\Controllers\Admin\ThemeController::class, 'theme'])->name('theme');
         Route::post('/theme/{id}', [\App\Http\Controllers\Admin\ThemeController::class, 'themeUpdate'])->name('themeUpdate');
+        // Site Settings
+        Route::get('/settings', [\App\Http\Controllers\Admin\SettingController::class, 'setting'])->name('setting');
+        Route::post('/settings/{id}', [\App\Http\Controllers\Admin\SettingController::class, 'settingUpdate'])->name('settingUpdate');
+        // Social Settings
+        Route::get('/social', [\App\Http\Controllers\Admin\SocialController::class, 'social'])->name('social');
+        Route::post('/social/{id}', [\App\Http\Controllers\Admin\SocialController::class, 'socialUpdate'])->name('socialUpdate');
+
     });
 
     // Admin Logout

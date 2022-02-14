@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Admin;
+use App\Models\SiteSettings;
+use App\Models\Social;
 use App\Models\Theme;
 use Illuminate\Database\Seeder;
 
@@ -24,6 +26,14 @@ class DatabaseSeeder extends Seeder
 
         Theme::insert([
             'website_name' => 'Demo',
+        ]);
+
+        SiteSettings::insert([
+            'email' => 'info@ourproject.com',
+        ]);
+
+        Social::insert([
+            'facebook' => '',
         ]);
     }
 }

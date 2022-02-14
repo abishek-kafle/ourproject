@@ -3,7 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Author: HiBootstrap Theme, Category: IT, Multipurpose, HTML, SASS" />
     <!-- title -->
-    <title>Solit - IT Startup HTML Template</title>
+    <title>@yield('title')</title>
     <!-- bootstrap CSS -->
     <link rel="stylesheet" href="{{asset('public/front/assets/css/bootstrap.min.css')}}" />
     <!-- fontawesome CSS -->
@@ -23,5 +23,5 @@
     <!-- responsive CSS -->
     <link rel="stylesheet" href="{{asset('public/front/assets/css/responsive.css')}}" />
     <!-- favicon -->
-    <link rel="icon" href="{{asset('public/front/assets/img/logos/favicon.png')}}" type="image/png" sizes="16x16" />
+    <link rel="icon" href="{{asset('public/uploads/'.$theme->favicon)}}" type="image/png" sizes="16x16" />
 </head>
