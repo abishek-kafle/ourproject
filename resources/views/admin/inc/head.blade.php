@@ -16,7 +16,7 @@
     <link href="{{asset('public/admin/assets/css/icons.css')}}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-
+    <link href="{{asset('public/admin/assets/plugins/datatable/css/dataTables.bootstrap5.min.css')}}" rel="stylesheet" />
     <!-- SweetAlert -->
     <link rel="stylesheet" href="{{asset('public/admin/assets/css/sweetalert.css')}}">
 

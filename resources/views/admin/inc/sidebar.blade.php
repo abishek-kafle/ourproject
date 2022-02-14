@@ -47,6 +47,15 @@
                 </li>
             </ul>
         </li>
+        <li>
+            <a href="{{route('banner.index')}}">
+                <div class="parent-icon"><i class="bi bi-image"></i>
+                </div>
+                <div class="menu-title">
+                    Banner Management
+                </div>
+            </a>
+        </li>
     </ul>
     <!--end navigation-->
 </aside>

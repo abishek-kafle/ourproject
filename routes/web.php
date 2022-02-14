@@ -46,7 +46,8 @@ Route::prefix('/admin')->group(function(){
         // Social Settings
         Route::get('/social', [\App\Http\Controllers\Admin\SocialController::class, 'social'])->name('social');
         Route::post('/social/{id}', [\App\Http\Controllers\Admin\SocialController::class, 'socialUpdate'])->name('socialUpdate');
-
+        // Banner Route
+        Route::get('/banners', [App\Http\Controllers\Admin\BannerController::class, 'index'])->name('banner.index');
     });
 
     // Admin Logout

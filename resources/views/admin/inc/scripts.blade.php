@@ -14,6 +14,9 @@
 <!--app-->
 <script src="{{asset('public/admin/assets/js/app.js')}}"></script>
 <script src="{{asset('public/admin/assets/js/index.js')}}"></script>
+<script src="{{asset('public/admin/assets/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('public/admin/assets/plugins/datatable/js/dataTables.bootstrap5.min.js')}}"></script>
+<script src="{{asset('public/admin/assets/js/table-datatable.js')}}"></script>
 <script>
   new PerfectScrollbar(".best-product")
 </script>
